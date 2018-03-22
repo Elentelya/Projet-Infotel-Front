@@ -17,13 +17,13 @@ export class LoginComponent implements OnInit {
     password: ""
   };
 
-constructor(
+  constructor(
     private backService: BackEndService,
     private messageService: MessagesService,
     private dss: DatashareService,
     private router: Router) { }
 
- ngOnInit() {
+  ngOnInit() {
   }
 
   login() {
@@ -45,5 +45,9 @@ constructor(
 
     );
 
-}
+  }
+
+  redirectRegister(){
+    this.router.navigate(['/register']);
+  }
 }

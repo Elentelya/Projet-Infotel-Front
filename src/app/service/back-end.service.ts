@@ -32,7 +32,7 @@ export class BackEndService {
 
   Register(newMember: InfosMember): Observable<any> {
     console.log(newMember);
-    return this.http.post<IdentifiantsVM>("http://localhost:8080/Library-Web/register", newMember, httpOptions)
+    return this.http.put<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)

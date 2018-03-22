@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackEndService } from '../service/back-end.service';
 
 @Component({
   selector: 'app-navigation',
@@ -10,6 +11,10 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    
   }
 
 }

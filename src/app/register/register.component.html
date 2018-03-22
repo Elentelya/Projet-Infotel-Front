@@ -1,61 +1,78 @@
 <div class="container">
-		<div class="row main">
-			<div class="panel-heading col-sm-12">
-				<div class="panel-title text-center">
-					<h1 class="title">Inscription</h1>
-				</div>
+	<div class="col-centered panel panel-default">
+		<div class="panel-heading">
+			<div class="panel-title text-center">
+				<h2 class="title">Inscription</h2>
 			</div>
-			<div class="col-sm-6 col-centered">
+		</div>
+		<div class="panel-body">
+			<div class=" col-sm-6 col-centered">
 				<form class="form-horizontal" method="post" action="register">
 
 					<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon">
+						<div class="input-group">
+							<span class="input-group-addon">
 									<i class="fa fa-user fa" aria-hidden="true"></i>
-								</span> 
-								<input id="firstname" type="text" class="form-control" name="firstname" [(ngModel)]="newMember.firstname" placeholder="Enter your FirstName (or surname)" required /> 
-								<input type="text" class="form-control" name="lastname" id="lastname" [(ngModel)]="newMember.firstname" placeholder="Enter your LastName" />
-							</div>
+								</span>
+							<input id="firstname" type="text" class="form-control" name="firstname" [(ngModel)]="newMember.firstname" placeholder="Enter your FirstName (or surname)"
+								required />
+							<input type="text" class="form-control" name="lastname" id="lastname" [(ngModel)]="newMember.lastname" placeholder="Enter your LastName"
+							/>
+						</div>
 					</div>
 
 					<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon">
+						<div class="input-group">
+							<span class="input-group-addon">
+									<i class="fa fa-at fa" aria-hidden="true"></i>
+								</span>
+							<input type="text" class="form-control" name="email" id="email" [(ngModel)]="newMember.email" placeholder="Enter your Email"
+								required />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
 									<i class="fa fa-envelope fa" aria-hidden="true"></i>
-								</span> 
-								<input type="text" class="form-control" name="email" id="email" [(ngModel)]="newMember.email" placeholder="Enter your Email" required />
-							</div>
+								</span>
+							<input type="text" class="form-control" name="email" id="email" [(ngModel)]="newMember.address" placeholder="Enter your Adress"
+								required />
+						</div>
 					</div>
 					<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon">
+						<div class="input-group">
+							<span class="input-group-addon">
 									<i class="fa fa-phone fa" aria-hidden="true"></i>
-								</span> 
-								<input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="newMember.phone" placeholder="Enter your PhoneNumber" />
-							</div>
+								</span>
+							<input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="newMember.phone" placeholder="Enter your PhoneNumber"
+							/>
+						</div>
 					</div>
 
 					<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon">
+						<div class="input-group">
+							<span class="input-group-addon">
 									<i class="fa fa-lock fa-lg" aria-hidden="true"></i>
-								</span> 
-								<input type="password" class="form-control" name="password" id="password" [(ngModel)]="newMember.password" placeholder="Enter your Password" required />
-							</div>
+								</span>
+							<input type="password" class="form-control" name="password" id="password" [(ngModel)]="newMember.password" placeholder="Enter your Password"
+								required />
+						</div>
 					</div>
 
-					<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i>
-							</span> 
-							<input type="password" class="form-control" name="confirm" id="confirm" [(ngModel)]="newMember.confirm" placeholder="Confirm your Password" required />
-							</div>
+					<!--<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+							</span>
+						<input type="password" class="form-control" name="confirm" id="confirm" [(ngModel)]="newMember.confirm" placeholder="Confirm your Password"
+							required />
 					</div>
+				</div>-->
 
 					<div class="form-group ">
-						<button class="btn btn-lg btn-primary btn-block" (click)="register()" >Inscription</button>
+						<button class="btn btn-lg btn-primary btn-block" (click)="register()">Inscription</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+</div>
