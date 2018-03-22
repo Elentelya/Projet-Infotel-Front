@@ -6,6 +6,7 @@ import { HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 import { InfosMember } from '../model/InfosMember';
+import { InfosBook } from '../model/InfosBook';
 
 
 
@@ -33,6 +34,15 @@ export class BackEndService {
   Register(newMember: InfosMember): Observable<any> {
     console.log(newMember);
     return this.http.put<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
+      .pipe(
+      retry(3),
+      catchError(this.handleError)
+      );
+  }
+
+  getListBook(infosBook: InfosBook): Observable<any> {
+    console.log(newMember);
+    return this.http.get<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
