@@ -40,6 +40,7 @@ export class BackEndService {
       );
   }
 
+<<<<<<< HEAD
   getListBook(infosBook: InfosBook): Observable<any> {
     console.log(infosBook);
     return this.http.get<InfosBook>("http://localhost:8080/Library-Web/book/getPopular", httpOptions)
@@ -48,6 +49,16 @@ export class BackEndService {
       catchError(this.handleError)
       );
   }
+=======
+//  getListBook(infosBook: InfosBook): Observable<any> {
+//    console.log(newMember);
+//    return this.http.get<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
+//      .pipe(
+//      retry(3),
+//      catchError(this.handleError)
+//      );
+//  }
+>>>>>>> a12f5776ac693635c253e8307a2f75963057ac85
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
