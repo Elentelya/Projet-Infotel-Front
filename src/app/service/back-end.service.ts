@@ -40,14 +40,14 @@ export class BackEndService {
       );
   }
 
-  getListBook(infosBook: InfosBook): Observable<any> {
-    console.log(newMember);
-    return this.http.get<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
-      .pipe(
-      retry(3),
-      catchError(this.handleError)
-      );
-  }
+//  getListBook(infosBook: InfosBook): Observable<any> {
+//    console.log(newMember);
+//    return this.http.get<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
+//      .pipe(
+//      retry(3),
+//      catchError(this.handleError)
+//      );
+//  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
