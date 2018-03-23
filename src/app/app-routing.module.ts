@@ -12,6 +12,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { BooksComponent } from './books/books.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AccountComponent } from './account/account.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
  { path: 'login', component: LoginComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
  { path: 'books', component: BooksComponent },
  { path: 'account', component: AccountComponent },
  { path: 'messages', component: MessagesComponent },
+ { path: 'admin', component: AdminComponent },
  { path: '**', component: PagenotfoundComponent }
 
 

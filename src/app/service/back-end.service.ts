@@ -41,8 +41,8 @@ export class BackEndService {
   }
 
   getListBook(infosBook: InfosBook): Observable<any> {
-    console.log(newMember);
-    return this.http.get<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
+    console.log(infosBook);
+    return this.http.get<InfosBook>("http://localhost:8080/Library-Web/book/getPopular", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)

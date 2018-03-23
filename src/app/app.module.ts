@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { AccountComponent } from './account/account.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AccountComponent } from './account/account.component';
     RegisterComponent,
     WelcomeComponent,
     MessagesComponent,
-    AccountComponent
+    AccountComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
