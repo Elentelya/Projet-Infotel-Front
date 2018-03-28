@@ -1,38 +1,53 @@
 <img class="img-top" src="assets/images/bibli.jpg" alt="Mille-Feuilles">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand">LocaLivres</a>
     <!-- Links -->
     <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="accueil">Accueil</a>
+        <li class="nav-item"><a class="nav-link" href="accueil">
+                <i class="fa fa-home marge"></i>Accueil</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="books">Catalogue
+        <li class="nav-item"><a class="nav-link" href="books"><i class="fa fa-book marge"></i>Catalogue
                 complet</a></li>
 
         <!-- Dropdown -->
         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-            href="category" id="navbardrop" data-toggle="dropdown">Categories</a>
+            href="category" id="navbardrop" data-toggle="dropdown"><i class="fa fa-list marge"></i>Categories</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="sciencefiction">Science Fiction</a> <a
                     class="dropdown-item" href="fantasy">Fantasy</a> <a
                     class="dropdown-item" href="thriller">Thriller</a>
             </div></li>
 
-        <li class="nav-item"><a class="nav-link" href="administration">
-                <span class="glyphicon glyphicon-shopping-cart marge"></span>Panier
-        </a></li>
+        <li *ngIf="user" class="nav-item">
+                <a class="nav-link" href="administration">
+                        <span class="glyphicon glyphicon-shopping-cart marge"></span>
+                        Panier
+                </a>
+        </li>
 
-        <li *ngIf="user" class="nav-item"><a class="nav-link">
-                <i class="fa fa-user-circle marge"></i>Mon Compte</a></li>
+        <li *ngIf="user" class="nav-item">
+                <a class="nav-link">
+                        <i class="fa fa-user-circle marge"></i>
+                        Mon Compte
+                </a>
+        </li>
 
-        <li *ngIf="user; else conn" class="nav-item"><a class="nav-link" (click)="logout()">
-                <span class="glyphicon glyphicon-log-out marge"></span>Deconnexion
-        </a></li>
+        <li *ngIf="user; else conn" class="nav-item">
+                <a class="nav-link" (click)="logout()">
+                        <span class="glyphicon glyphicon-log-out marge"></span>
+                        Deconnexion
+                </a>
+        </li>
 
-        <ng-template #conn><li><a class="nav-link" href="login"><span
-                class="glyphicon glyphicon-log-in marge"></span> Connexion </a></li></ng-template>
+        <ng-template #conn>
+                <li class="menu-droite">
+                        <a class="nav-link" href="login">
+                                <span class="glyphicon glyphicon-log-in marge"></span> 
+                                Connexion 
+                        </a>
+                </li>
+        </ng-template>
         
-        <li *ngIf="user.admin" class="nav-item dropdown"><a class="nav-link" href="admin"><i class="fa fa-cog"></i>Administration</a>
+        <li *ngIf="user && user.admin" class="nav-item dropdown"><a class="nav-link" href="admin"><i class="fa fa-cog"></i>Administration</a>
            </li>
     </ul>
 </nav>

@@ -8,10 +8,10 @@
     </div>
     <div class="panel-body">
       <div class="col-sm-10 col-centered">
-        <button class="btn btn-lg btn btn-dark btn-block" (click)="register()">Mes informations</button>
-        <button class="btn btn-lg btn btn-dark btn-block" (click)="register()">Mes commandes</button>
-        <button class="btn btn-lg btn btn-dark btn-block" (click)="register()">Mes prêts en cours</button>
-        <button class="btn btn-lg btn btn-dark btn-block" (click)="register()">Mes prêts terminés</button>
+        <button class="btn btn-lg btn btn-dark btn-block" (click)="redirect('/user-infos')">Mes informations</button>
+        <button class="btn btn-lg btn btn-dark btn-block disabled" (click)="register()">Mes commandes</button>
+        <button class="btn btn-lg btn btn-dark btn-block disabled" (click)="register()">Mes prêts en cours</button>
+        <button class="btn btn-lg btn btn-dark btn-block disabled" (click)="register()">Mes prêts terminés</button>
       </div>
     </div>
   </div>

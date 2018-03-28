@@ -7,6 +7,8 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 import { InfosMember } from '../model/InfosMember';
 import { InfosBook } from '../model/InfosBook';
+import { Search } from '../model/Search';
+import {BASE_URL} from '../constantes'
 
 
 
@@ -16,15 +18,18 @@ const httpOptions = {
  })
 }
 
+
 @Injectable()
 export class BackEndService {
+
+private URL: string = BASE_URL;
 
  constructor(private http: HttpClient) { }
 
 
  Login(identifiantsVm: IdentifiantsVM): Observable<any> {
    console.log(identifiantsVm);
-   return this.http.post<IdentifiantsVM>("http://localhost:8080/Library-Web/login", identifiantsVm, httpOptions)
+   return this.http.post<IdentifiantsVM>(this.URL +"login", identifiantsVm, httpOptions)
      .pipe(
      retry(3),
      catchError(this.handleError)
@@ -33,7 +38,7 @@ export class BackEndService {
 
  Register(newMember: InfosMember): Observable<any> {
    console.log(newMember);
-   return this.http.put<IdentifiantsVM>("http://localhost:8080/Library-Web/member/add", newMember, httpOptions)
+   return this.http.put<IdentifiantsVM>(this.URL +"member/add", newMember, httpOptions)
      .pipe(
      retry(3),
      catchError(this.handleError)
@@ -42,7 +47,7 @@ export class BackEndService {
 
  GetPopularBook(popularBooks: InfosBook[]): Observable<any> {
     console.log(popularBooks);
-    return this.http.get<InfosBook[]>("http://localhost:8080/Library-Web/book/getPopular", httpOptions)
+    return this.http.get<InfosBook[]>(this.URL +"book/getPopular", httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
@@ -51,12 +56,21 @@ export class BackEndService {
 
   GetBooks(Books: InfosBook[]): Observable<any> {
     console.log(Books);
-    return this.http.get<InfosBook[]>("http://localhost:8080/Library-Web/book/getAll", httpOptions)
+    return this.http.get<InfosBook[]>(this.URL +"book/getAll", httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
     );
   } 
+
+  Search(search: Search): Observable<any> {
+   console.log(search);
+   return this.http.post<Search>(this.URL +"search", search, httpOptions)
+     .pipe(
+     retry(3),
+     catchError(this.handleError)
+     );
+ }
 
  private handleError(error: HttpErrorResponse) {
    if (error.error instanceof ErrorEvent) {

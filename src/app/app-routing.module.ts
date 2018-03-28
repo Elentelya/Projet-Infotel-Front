@@ -13,6 +13,7 @@ import { BooksComponent } from './books/books.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
+import { UserInfosComponent } from './user-infos/user-infos.component';
 
 const routes: Routes = [
  { path: 'login', component: LoginComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
  { path: 'account', component: AccountComponent },
  { path: 'messages', component: MessagesComponent },
  { path: 'admin', component: AdminComponent },
+ { path: 'user-infos', component: UserInfosComponent },
  { path: '**', component: PagenotfoundComponent }
 
 

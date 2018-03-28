@@ -7,5 +7,14 @@
 }
 
 .marge{
-    margin: 2px;
+    margin: 0 3px;
+}
+
+.navbar-nav li{
+    font-size: 15px;
+    margin: 0 5px;
+}
+
+.menu-droite{
+    float: right;
 }

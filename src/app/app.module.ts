@@ -23,6 +23,8 @@ import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { UserInfosComponent } from './user-infos/user-infos.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { AdminComponent } from './admin/admin.component';
     WelcomeComponent,
     MessagesComponent,
     AccountComponent,
-    AdminComponent
+    AdminComponent,
+    SearchBarComponent,
+    UserInfosComponent
   ],
   imports: [
     BrowserModule,
