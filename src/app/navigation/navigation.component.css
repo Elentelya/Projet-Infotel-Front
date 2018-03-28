@@ -18,3 +18,7 @@
 .menu-droite{
     float: right;
 }
+
+.dropdown-item{
+     font-size: 14px;
+}

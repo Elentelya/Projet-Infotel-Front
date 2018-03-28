@@ -25,6 +25,8 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserInfosComponent } from './user-infos/user-infos.component';
+import { LocalStorageService } from 'ngx-webstorage';
+import { SearchBookAdminComponent } from './search-book-admin/search-book-admin.component';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { UserInfosComponent } from './user-infos/user-infos.component';
     AccountComponent,
     AdminComponent,
     SearchBarComponent,
-    UserInfosComponent
+    UserInfosComponent,
+    SearchBookAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { UserInfosComponent } from './user-infos/user-infos.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [MessagesService, BackEndService, DatashareService],
+  providers: [MessagesService, BackEndService, DatashareService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

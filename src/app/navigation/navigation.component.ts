@@ -3,6 +3,7 @@ import { BackEndService } from '../service/back-end.service';
 import { DatashareService } from '../service/datashare.service';
 import { InfosMember } from '../model/InfosMember';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-navigation',
@@ -15,10 +16,13 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private dss: DatashareService,
-    private router: Router) { }
+    private router: Router,
+    private storage: LocalStorageService) { }
 
   ngOnInit() {
-    this.user = this.dss.loggedMember;
+    if(this.storage.retrieve('me')){
+      this.user = this.storage.retrieve('me');
+    }
   }
 
   redirect(route) {
@@ -26,7 +30,7 @@ export class NavigationComponent implements OnInit {
   }
 
   logout() {
-
+    this.storage.clear('me');
   }
 
 }

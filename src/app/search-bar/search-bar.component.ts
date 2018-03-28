@@ -12,7 +12,7 @@ import { Search } from '../model/Search';
 })
 export class SearchBarComponent implements OnInit {
 
-  input:string;
+
 
   searchTerm: Search = {
     title: ""
@@ -30,7 +30,6 @@ export class SearchBarComponent implements OnInit {
 
   search() {
 console.log("recherche mots " + JSON.stringify(this.searchTerm));
-console.log("recherche mots " + this.input);
 
     this.backService.Search(this.searchTerm).subscribe(
       data => {

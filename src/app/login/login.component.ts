@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BackEndService } from '../service/back-end.service';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
 import { DatashareService } from '../service/datashare.service';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private backService: BackEndService,
     private messageService: MessagesService,
-    private dss: DatashareService,
-    private router: Router) { }
+    private router: Router,
+    private storage: LocalStorageService) { }
 
   ngOnInit() {
   }
@@ -33,7 +34,8 @@ export class LoginComponent implements OnInit {
         if (data.payload) {
           console.log(data.payload);
           //cache the logged member in datashare service
-          this.dss.loggedMember = data.payload;
+          this.storage.store('me', data.payload)
+          //this.storage.clear('me');
           //navigate to home and display navbar or the hidden tabs
           this.router.navigate(['/account']);
         }
