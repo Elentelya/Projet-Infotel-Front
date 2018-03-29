@@ -26,7 +26,7 @@ import { AdminComponent } from './admin/admin.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserInfosComponent } from './user-infos/user-infos.component';
 import { LocalStorageService } from 'ngx-webstorage';
-import { SearchBookAdminComponent } from './search-book-admin/search-book-admin.component';
+// import { SearchBookAdminComponent } from './search-book-admin/search-book-admin.component';
 
 
 @NgModule({
@@ -48,7 +48,7 @@ import { SearchBookAdminComponent } from './search-book-admin/search-book-admin.
     AdminComponent,
     SearchBarComponent,
     UserInfosComponent,
-    SearchBookAdminComponent
+    // SearchBookAdminComponent
   ],
   imports: [
     BrowserModule,
