@@ -12,3 +12,7 @@
 .carrousel-size{
     min-height: 500px
 }
+
+.container{
+    margin: 0 auto 20px;
+}
